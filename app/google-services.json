@@ -1,0 +1,42 @@
+{
+         "project_info": {
+                  "project_number": "680409782383",
+                  "firebase_url": "https://science-aac23.firebaseio.com",
+                  "project_id": "science-aac23",
+                  "storage_bucket": "science-aac23.appspot.com"
+         },
+         "client": [
+                  {
+                           "client_info": {
+                                    "mobilesdk_app_id": "1:680409782383:android:9e9f2ddc58dedede",
+                                    "android_client_info": {
+                                             "package_name": "com.sphinx.science"
+                                    }
+                           },
+                           "oauth_client": [
+                                    {
+                                             "client_id": "680409782383-5h4h4b8csfpi3juc5j17rn50ar22rkrt.apps.googleusercontent.com",
+                                             "client_type": 3
+                                    }
+                           ],
+                           "api_key": [
+                                    {
+                                             "current_key": "AIzaSyB6UyaTTGxpUrI74H3OghILOoZxRJNUPQs"
+                                    }
+                           ],
+                           "services": {
+                                    "analytics_service": {
+                                             "status": 1
+                                    },
+                                    "appinvite_service": {
+                                             "status": 1,
+                                             "other_platform_oauth_client": []
+                                    },
+                                    "ads_service": {
+                                             "status": 2
+                                    }
+                           }
+                  }
+         ],
+         "configuration_version": "1"
+}

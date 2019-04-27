@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+         package="com.sphinx.science">
+
+         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+         <!-- Adding the permission -->
+         <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+         <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+         <uses-feature
+                  android:glEsVersion="0x00020000"
+                  android:required="true" />
+
+         <application
+                  android:name=".Entities.UserClient"
+                  android:allowBackup="true"
+                  android:icon="@drawable/icon"
+                  android:label="Science"
+                  android:roundIcon="@drawable/icon"
+                  android:supportsRtl="true"
+                  android:theme="@style/AppTheme">
+                  <provider
+                           android:name=".SampleContentProvider"
+                           android:authorities="com.sphinx.science"
+                           android:exported="true" />
+
+                  <!-- Declaring broadcast receiver for BOOT_COMPLETED event. -->
+                  <receiver
+                           android:name=".OnBooted"
+                           android:enabled="true"
+                           android:exported="false">
+                           <intent-filter>
+                                    <action android:name="RestartServiceApi" />
+                                    <action android:name="RestartService" />
+                                    <action android:name="android.intent.action.BOOT_COMPLETED" />
+                                    <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                                    <action android:name="android.intent.action.REBOOT" />
+                           </intent-filter>
+                  </receiver>
+
+                  <service android:name=".Receivers.NotificationService" />
+                  <service
+                           android:name=".Receivers.TestJobService"
+                           android:label="Word service"
+                           android:permission="android.permission.BIND_JOB_SERVICE"></service>
+
+                  <service android:name="com.sphinx.science.Receivers.MyFirebaseMessagingService">
+                           <intent-filter>
+                                    <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                           </intent-filter>
+                  </service>
+
+                  <activity
+                           android:name=".Activities.StartServiceOnPauseActivity"
+                           android:screenOrientation="portrait" />
+                  <activity
+                           android:name=".Activities.RequestActivity"
+                           android:screenOrientation="portrait" />
+                  <activity
+                           android:name=".Activities.LoginActivity"
+                           android:screenOrientation="portrait" />
+                  <activity
+                           android:name=".Activities.RegisterActivity"
+                           android:screenOrientation="portrait">
+                           <intent-filter>
+                                    <action android:name="android.intent.action.MAIN" />
+
+                                    <category android:name="android.intent.category.LAUNCHER" />
+                           </intent-filter>
+                  </activity>
+                  <activity
+                           android:name=".Activities.ProfileActivity"
+                           android:screenOrientation="portrait" />
+                  <activity
+                           android:name=".Activities.VerifyPhoneActivity"
+                           android:screenOrientation="portrait" />
+                  <activity
+                           android:name=".Activities.RequestChatActivity"
+                           android:windowSoftInputMode="adjustResize" />
+                  <activity android:name=".Activities.AdminActivity" />
+                  <activity android:name=".Activities.AddAdminActivity"></activity>
+         </application>
+
+</manifest>

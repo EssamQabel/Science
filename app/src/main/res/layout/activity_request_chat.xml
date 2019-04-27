@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:app="http://schemas.android.com/apk/res-auto"
+         xmlns:tools="http://schemas.android.com/tools"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@android:color/transparent"
+         tools:context=".Activities.RequestChatActivity"
+         android:fillViewport="true">
+
+         <android.support.constraint.ConstraintLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+                  <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent">
+                           <ListView
+                                    android:transcriptMode="alwaysScroll"
+                                    android:id="@+id/messagesListView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="42dp"
+                                    android:layout_marginRight="8dp"
+                                    android:divider="@color/transparentGrey"
+                                    app:layout_constraintEnd_toStartOf="@id/lowerLayout"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                  </LinearLayout>
+
+                  <ImageView
+                           android:id="@+id/downloadRequirementsButton"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="8dp"
+                           android:layout_marginLeft="8dp"
+                           android:layout_marginTop="8dp"
+                           android:layout_marginBottom="8dp"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintHorizontal_bias="1.0"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           app:layout_constraintVertical_bias="0.909"
+                           app:srcCompat="@drawable/downloadbutton" />
+
+
+                  <android.support.constraint.ConstraintLayout
+                           android:id="@+id/lowerLayout"
+                           android:layout_width="match_parent"
+                           android:layout_height="50dp"
+                           android:background="@drawable/chatboardbackground"
+                           app:layout_constraintBottom_toBottomOf="parent">
+
+                           <Button
+                                    android:id="@+id/sendMsg"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="28dp"
+                                    android:layout_marginRight="28dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@drawable/sendmsgbutton"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                           <Button
+                                    android:visibility="invisible"
+                                    android:id="@+id/sendAttachment"
+                                    android:layout_width="15dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:layout_marginRight="16dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:background="@drawable/attachfile"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/sendMsg"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                           <EditText
+                                    android:id="@+id/input_message"
+                                    android:layout_width="0dp"
+                                    android:layout_height="50dp"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginLeft="16dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:layout_toStartOf="@+id/sendMsg"
+                                    android:layout_toLeftOf="@+id/sendMsg"
+                                    android:background="@null"
+                                    android:gravity="center_vertical"
+                                    android:hint="new message..."
+                                    android:textColor="@color/Black"
+                                    android:textSize="14sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/sendAttachment"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                           <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="10dp"
+                                    android:background="@color/White"
+                                    app:layout_constraintBottom_toBottomOf="parent">
+
+                           </View>
+                  </android.support.constraint.ConstraintLayout>
+         </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
